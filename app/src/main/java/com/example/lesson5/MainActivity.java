@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         signb = getsign(b);
         signc = getsign(c);
 
-        url = "https://www.google.com/search?q="+signa + a +"x"+signb+b+signc+c+"&rlz=1C1CHBD_enIL872IL872&oq=2x&aqs=chrome.0.69i59j69i57j69i59j69i60.3522j0j7&sourceid=chrome&ie=UTF-8";
+        url = "https://www.google.com/search?q="+signa + a +"x%5E2"+signb+b+"x"+signc+c+"&rlz=1C1CHBD_enIL872IL872&oq=2x&aqs=chrome.0.69i59j69i57j69i59j69i60.3522j0j7&sourceid=chrome&ie=UTF-8";
         wv.loadUrl(url);
 
     }
