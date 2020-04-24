@@ -13,9 +13,10 @@
         android:orientation="vertical">
 
         <WebView
+            android:id="@+id/wv"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="20">
+            android:layout_weight="14">
 
         </WebView>
 
@@ -36,11 +37,10 @@
                 android:layout_weight="2" />
 
             <TextView
-                android:id="@+id/a"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:text='"a' />
+                android:text='a' />
 
             <Space
                 android:layout_width="0px"
@@ -48,11 +48,10 @@
                 android:layout_weight="2" />
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:text="'b'" />
+                android:text="b" />
 
             <Space
                 android:layout_width="0px"
@@ -60,11 +59,10 @@
                 android:layout_weight="2" />
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
-                android:text="'c'" />
+                android:text="c" />
 
             <Space
                 android:layout_width="0px"
@@ -72,12 +70,16 @@
                 android:layout_weight="2" />
         </LinearLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="2" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
             android:layout_weight="2"
-            android:orientation="horizontal"
-            android:visibility="invisible">
+            android:orientation="horizontal">
 
             <Space
                 android:layout_width="0px"
@@ -85,12 +87,12 @@
                 android:layout_weight="2" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/a"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:ems="10"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned|numberDecimal" />
 
             <Space
                 android:layout_width="0px"
@@ -98,12 +100,12 @@
                 android:layout_weight="2" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/b"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:ems="10"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned|numberDecimal" />
 
             <Space
                 android:layout_width="0px"
@@ -111,12 +113,12 @@
                 android:layout_weight="2" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/c"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:ems="10"
-                android:inputType="numberSigned" />
+                android:inputType="numberSigned|numberDecimal" />
 
             <Space
                 android:layout_width="0px"
@@ -141,11 +143,11 @@
                 android:layout_weight="2" />
 
             <Button
-                android:id="@+id/button"
+                android:onClick="submit"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Button" />
+                android:text="submit" />
 
             <Space
                 android:layout_width="0px"
