@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
     private float getnumber(EditText et, String a) {
         float value =0;
         str = et.getText().toString();
-        if((a=="a") && (str.matches("")||str.matches(".")||str.matches("-"))) {
+        if((a=="a") && (str.equals("")||str.equals("."))) {
             Toast.makeText(this, "if you don't write a value in a it won't work", Toast.LENGTH_SHORT).show();
         }
-        else if (str.matches("")||str.matches(".")||str.matches("-")) {
+        else if (str.equals("")||str.equals(".")||str.equals("-")) {
             Toast.makeText(this, "you don't wirte a number in the "+a+" it consider it like a 0", Toast.LENGTH_SHORT).show();
         }
         else
