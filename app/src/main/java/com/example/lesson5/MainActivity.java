@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
             if (isValid)
             {
-                signa = getsign(a);
-                signb = getsign(b);
-                signc = getsign(c);
+                signa = getsign(eta);
+                signb = getsign(etb);
+                signc = getsign(etc);
 
                 a = Math.abs(a);
                 b = Math.abs(b);
@@ -86,16 +86,17 @@ public class MainActivity extends AppCompatActivity {
         return value;
     }
 
-    private String getsign(float a) {
+    private String getsign(EditText et) {
         String sign ="";
+        str = et.getText().toString();
 
-        if (a>=0)
+        if (str.contains("-"))
         {
-            sign ="%2B";
+            sign ="-";
         }
         else
         {
-            sign ="-";
+            sign ="%2B";
         }
         return sign;
     }
