@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean isValid;
     String str;
     String url;
     WebView wv;
@@ -40,22 +41,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submit(View view) {
+            isValid = true;
             a = getnumber(eta,"a");
-            if (a!=0)
-            {
-                b = getnumber(etb,"b");
-                c = getnumber(etc,"c");
+            b = getnumber(etb,"b");
+            c = getnumber(etc,"c");
 
+            if (isValid)
+            {
                 signa = getsign(a);
                 signb = getsign(b);
                 signc = getsign(c);
 
-                a = checknumber(a);
-                b = checknumber(b);
-                c = checknumber(c);
-                url = "https://www.google.com/search?q=" + a + "x%5E2" + signb + b + "x" + signc + c + "&rlz=1C1CHBD_enIL872IL872&oq=x%5E2%2B5x&aqs=chrome.1.69i57j0l7.15066j0j7&sourceid=chrome&ie=UTF-8";
+                a = Math.abs(a);
+                b = Math.abs(b);
+                c = Math.abs(c);
+
+                if(signa !="-")
+                {
+                    url = "https://www.google.com/search?q="+ a + "x%5E2" + signb + b + "x" + signc + c + "&rlz=1C1CHBD_enIL872IL872&oq=x%5E2%2B5x&aqs=chrome.1.69i57j0l7.15066j0j7&sourceid=chrome&ie=UTF-8";
+                }
+                else {
+                    url = "https://www.google.com/search?q=" + signa + a + "*" + "x%5E2" + signb + b + "x" + signc + c + "&rlz=1C1CHBD_enIL872IL872&oq=x%5E2%2B5x&aqs=chrome.1.69i57j0l7.15066j0j7&sourceid=chrome&ie=UTF-8";
+                }
                 wv.loadUrl(url);
             }
+
+
             eta.setText("");
             etb.setText("");
             etc.setText("");
@@ -64,11 +75,9 @@ public class MainActivity extends AppCompatActivity {
     private float getnumber(EditText et, String a) {
         float value =0;
         str = et.getText().toString();
-        if((a=="a") && (str.equals("")||str.equals("."))) {
-            Toast.makeText(this, "if you don't write a value in a it won't work", Toast.LENGTH_SHORT).show();
-        }
-        else if (str.equals("")||str.equals(".")||str.equals("-")) {
-            Toast.makeText(this, "you don't wirte a number in the "+a+" it consider it like a 0", Toast.LENGTH_SHORT).show();
+        if (str.equals("")||str.equals(".")||str.equals("-")) {
+            isValid = false;
+            Toast.makeText(this, "please put a number in "+a, Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -77,18 +86,10 @@ public class MainActivity extends AppCompatActivity {
         return value;
     }
 
-    private float checknumber(float a) {
-        if (a<0)
-        {
-            return a*-1;
-        }
-        return a;
-    }
-
     private String getsign(float a) {
         String sign ="";
 
-        if (a>0)
+        if (a>=0)
         {
             sign ="%2B";
         }
