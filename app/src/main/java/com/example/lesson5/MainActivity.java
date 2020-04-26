@@ -46,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
             b = getnumber(etb,"b");
             c = getnumber(etc,"c");
 
+            if (a == 0)
+            {
+                isValid = false;
+                Toast.makeText(this, "a need to be defrent from 0 (it won't be a parabole)", Toast.LENGTH_SHORT).show();
+            }
             if (isValid)
             {
                 signa = getsign(eta);
@@ -86,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         return value;
     }
 
+    /*
+    Input: edit text
+    Output: The sign
+    read the edit text and dexide what is the sign
+     */
     private String getsign(EditText et) {
         String sign ="";
         str = et.getText().toString();
