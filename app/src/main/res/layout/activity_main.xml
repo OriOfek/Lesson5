@@ -16,7 +16,7 @@
             android:id="@+id/wv"
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="14">
+            android:layout_weight="35">
 
         </WebView>
 
@@ -28,7 +28,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:orientation="horizontal">
 
             <Space
@@ -78,7 +78,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:orientation="horizontal">
 
             <Space
@@ -134,7 +134,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="2"
+            android:layout_weight="5"
             android:orientation="horizontal">
 
             <Space
@@ -143,10 +143,10 @@
                 android:layout_weight="2" />
 
             <Button
-                android:onClick="submit"
                 android:layout_width="0px"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                android:onClick="submit"
                 android:text="submit" />
 
             <Space
