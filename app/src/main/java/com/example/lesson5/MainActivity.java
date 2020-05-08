@@ -58,7 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 stra = getstr(eta);
                 strb = getstr(etb);
                 strc = getstr(etc);
-
+                if (strc.contains("*"))
+                {
+                    strc = strc.replace("*","");
+                }
                 if(signa !="-")
                 {
                     url = "https://www.google.com/search?q="+ stra + "x%5E2" +signb+ strb+ "x" +signc+ strc + "&rlz=1C1CHBD_enIL872IL872&oq=x%5E2%2B5x&aqs=chrome.1.69i57j0l7.15066j0j7&sourceid=chrome&ie=UTF-8";
@@ -77,12 +80,18 @@ public class MainActivity extends AppCompatActivity {
 
     private String getstr(EditText et)
     {
+        float value = 0;
         answer ="";
 
+        value = Float.parseFloat(et.getText().toString());
         answer = et.getText().toString();
         if (answer.contains("-"))
         {
             answer= answer.replace("-","");
+        }
+        if (value == 0)
+        {
+            answer = answer + "*";
         }
         return answer;
     }
