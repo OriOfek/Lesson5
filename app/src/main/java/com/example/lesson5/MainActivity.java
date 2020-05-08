@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etb;
     EditText etc;
     float a;
-    float b;
-    float c;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void submit(View view) {
             isValid = true;
-            a = getnumber(eta,"a");
-            b = getnumber(etb,"b");
-            c = getnumber(etc,"c");
+            checkvalid(eta,"a");
+            checkvalid(etb,"b");
+            checkvalid(etc,"c");
 
-            if (a == 0)
-            {
-                isValid = false;
-                Toast.makeText(this, "a need to be defrent from 0 (it won't be a parabole)", Toast.LENGTH_SHORT).show();
-            }
             if (isValid)
             {
                 signa = getsign(eta);
@@ -64,10 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 stra = getstr(eta);
                 strb = getstr(etb);
                 strc = getstr(etc);
-
-                a = Math.abs(a);
-                b = Math.abs(b);
-                c = Math.abs(c);
 
                 if(signa !="-")
                 {
@@ -96,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return answer;
     }
-    private float getnumber(EditText et, String a) {
+    private void checkvalid(EditText et, String a) {
         float value =0;
         str = et.getText().toString();
         if (str.equals("")||str.equals(".")||str.equals("-")) {
@@ -107,7 +97,13 @@ public class MainActivity extends AppCompatActivity {
         {
             value = Float.parseFloat(et.getText().toString());
         }
-        return value;
+
+        if (a.equals("a") && value == 0)
+        {
+            isValid = false;
+            Toast.makeText(this, "a need to be defrent from 0 (it won't be a parabole)", Toast.LENGTH_SHORT).show();
+
+        }
     }
 ;
     /*
